@@ -6,7 +6,7 @@ from PIL import Image
 
 # %%
 im = Image.open("./logo_ugry.png")
-st.set_page_config(page_title="Распределение типов связ", page_icon=im)
+st.set_page_config(page_title="Распределение типов связи", page_icon=im)
 
 # %%
 st.title("Распределение типов связи")
