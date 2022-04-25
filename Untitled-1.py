@@ -5,8 +5,8 @@ from collections import Counter
 from PIL import Image
 
 # %%
-# im = Image.open("./logo_ugry.png")
-# st.set_page_config(page_title="", page_icon=im)
+im = Image.open("./logo_ugry.png")
+st.set_page_config(page_title="", page_icon=im)
 
 # %%
 st.title("Распределение типов связи")
