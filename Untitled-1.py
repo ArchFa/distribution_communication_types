@@ -10,7 +10,7 @@ from PIL import Image
 
 # %%
 st.title("Распределение типов связи")
-st.write("Выбранные типы связи для задач. Датафрейм был отфильтрован. Учитываются только следующий платформы: iOS, Android")
+st.write("Выбранные типы связи для задач. Датафрейм был отфильтрован, учитываются только следующие платформы: iOS, Android")
 
 
 uploaded_file = st.file_uploader("Выбирете файл")
@@ -25,14 +25,9 @@ if uploaded_file is not None:
      df = df.query('platform != " web      "')
      df = df.query('platform != " whatsapp "')
 
-     # изменение типов
-     df['customer_phone'] = df['customer_phone'].astype(str)
-     df['task_id'] = df['task_id'].astype(int)
-     df['date_creation'] = pd.to_datetime(df['date_creation'], format='%Y-%m-%dT%H:%M:%S')
-
      # удаление пропусков, которые появляются из за особенностей выгрузки
      df = df.dropna()
-     
+
      file_container = st.expander("Check your uploaded .csv")   
      st.write(df)
 else:
