@@ -35,7 +35,8 @@ if uploaded_file is not None:
      df = df.dropna()
 
      file_container = st.expander("Check your uploaded .csv")   
-     st.write(df)
+     st.markdown("### Обзор выгрузки")
+     st.dataframe(df.head())
 
 st.info(
    f"""
@@ -63,7 +64,7 @@ st.write('Процент пользователей, которые создав
 
 # %%
 in_app = df.query('communication_type == " in_app"').count()[0]
-st.write('Количество задач с типом связи "by_phone"', in_app)
+st.write('Количество задач с типом связи "in_app"', in_app)
 
 st.write('Процент пользователей, которые создавали задачу через приложение {:.0f}%'
         .format(in_app * 100 / all_task))
